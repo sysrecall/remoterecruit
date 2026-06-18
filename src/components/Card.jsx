@@ -8,8 +8,6 @@ export default function Card() {
         border-gray-100 
         shadow-[14px_41px_100px_0px_rgba(49,89,211,0.12)]
       "
-    >
-      Card
-    </div>
+    ></div>
   );
 }

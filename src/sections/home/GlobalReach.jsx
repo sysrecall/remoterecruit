@@ -1,13 +1,65 @@
+import { useEffect, useRef } from "react";
+import { animate, createTimeline } from "animejs";
 import SectionTag from "../../components/ui/SectionTag";
 import Card from "../../components/Card";
 import GradientCircle from "../../components/ui/GradientCircle";
 import OverlayStrip from "../../components/ui/OverlayStrip";
 
 export default function GlobalReach() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const currentContainer = containerRef.current;
+    if (!currentContainer) return;
+
+    let floatingAnimation = null;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = currentContainer.querySelectorAll(".animate-item");
+
+          const tl = createTimeline({
+            ease: "outQuad",
+            complete: () => {
+              floatingAnimation = animate(items, {
+                y: ["0px", "-12px", "0px"],
+                x: ["0px", "4px", "0px"],
+                duration: 1000,
+                loop: true,
+                ease: "inOutSine",
+                delay: (el, i) => i * 200,
+              });
+            },
+          });
+
+          tl.add(items, {
+            opacity: [0, 1],
+            y: [30, 0],
+            scale: [0.95, 1],
+            delay: (el, i) => i * 150,
+            duration: 1000,
+          });
+
+          observer.unobserve(currentContainer);
+        }
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    observer.observe(currentContainer);
+
+    return () => {
+      observer.disconnect();
+      if (floatingAnimation) floatingAnimation.stop();
+    };
+  }, []);
+
   return (
-    <div className="p-18 flex justify-center items-center">
+    <div ref={containerRef} className="p-18 flex justify-center items-center">
       <div className="w-[82%] flex flex-row justify-between">
-        {/* LEFT TEXT */}
         <div className="flex flex-col py-6 gap-8 w-[50%] text-left">
           <SectionTag name={"Global Reach"} />
 
@@ -23,18 +75,18 @@ export default function GlobalReach() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="w-[45%] flex justify-end relative">
           <GradientCircle
-            className="w-6 h-6 mr-6"
+            className="animate-item opacity-0 w-6 h-6 mr-6"
             colors={["#52B4DA", "#1E3E85"]}
           />
 
           <div className="relative">
-            <Card />
+            <Card className="animate-item opacity-0" />
 
             <img
               className="
+                animate-item opacity-0
                 rounded-2xl
                 absolute w-86 h-50 z-10
                 top-7
@@ -42,10 +94,12 @@ export default function GlobalReach() {
                 object-cover
               "
               src={"https://picsum.photos/200"}
+              alt="Global Reach"
             />
 
             <GradientCircle
               className="
+                animate-item opacity-0
                 z-30
                 -right-10
                 absolute              
@@ -56,14 +110,14 @@ export default function GlobalReach() {
             />
 
             <OverlayStrip
-              className="top-1/2 -left-15"
+              className="animate-item opacity-0 top-1/2 -left-15"
               imageSrc={"https://picsum.photos/200"}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
             />
 
             <OverlayStrip
-              className="bottom-10 left-4"
+              className="animate-item opacity-0 bottom-10 left-4"
               imageSrc={"https://picsum.photos/200"}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
