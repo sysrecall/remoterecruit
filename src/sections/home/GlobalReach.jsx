@@ -4,6 +4,9 @@ import SectionTag from "../../components/ui/SectionTag";
 import Card from "../../components/Card";
 import GradientCircle from "../../components/ui/GradientCircle";
 import OverlayStrip from "../../components/ui/OverlayStrip";
+import gru from "../../assets/gru.png";
+import rr_1 from "../../assets/rr_1.png";
+import lets_find_work from "../../assets/lets_find_work.png";
 
 export default function GlobalReach() {
   const containerRef = useRef(null);
@@ -75,6 +78,7 @@ export default function GlobalReach() {
           </div>
         </div>
 
+        {/* Card Section */}
         <div className="w-[45%] flex justify-end relative">
           <GradientCircle
             className="animate-item opacity-0 w-6 h-6 mr-6"
@@ -82,18 +86,17 @@ export default function GlobalReach() {
           />
 
           <div className="relative">
-            <Card className="animate-item opacity-0" />
+            <Card />
 
             <img
               className="
-                animate-item opacity-0
-                rounded-2xl
+                rounded-[14px]
                 absolute w-86 h-50 z-10
                 top-7
                 left-7
-                object-cover
+                object-cover object-top
               "
-              src={"https://picsum.photos/200"}
+              src={lets_find_work}
               alt="Global Reach"
             />
 
@@ -104,21 +107,23 @@ export default function GlobalReach() {
                 -right-10
                 absolute              
                 w-26 h-26
+                p-6
                 top-2/6
               "
-              imageSrc={"https://picsum.photos/200"}
+              roundImage={false}
+              imageSrc={rr_1}
             />
 
             <OverlayStrip
               className="animate-item opacity-0 top-1/2 -left-15"
-              imageSrc={"https://picsum.photos/200"}
+              imageSrc={gru}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
             />
 
             <OverlayStrip
               className="animate-item opacity-0 bottom-10 left-4"
-              imageSrc={"https://picsum.photos/200"}
+              imageSrc={gru}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
             />

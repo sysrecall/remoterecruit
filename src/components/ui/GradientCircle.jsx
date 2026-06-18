@@ -2,6 +2,7 @@ export default function GradientCircle({
   colors = ["#52B4DA", "#1E3E85"],
   className = "",
   imageSrc,
+  roundImage = true,
   alt = "",
 }) {
   return (
@@ -15,7 +16,7 @@ export default function GradientCircle({
         <img
           src={imageSrc}
           alt={alt}
-          className="w-[86%] h-[86%] rounded-full object-cover"
+          className={`w-[86%] h-[86%] ${roundImage && "rounded-full"} object-cover`}
         />
       )}
     </div>

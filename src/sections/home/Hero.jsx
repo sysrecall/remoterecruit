@@ -1,3 +1,7 @@
+import Button from "../../components/ui/Button";
+import remote_recruit from "../../assets/remote_recruit.png";
+import NavButton from "../../components/ui/NavButton";
+
 export default function Hero() {
   return (
     <div className="min-h-dvh">
@@ -22,14 +26,14 @@ function TopBar() {
   return (
     <div
       className="flex flex-row justify-between
-      px-20 py-10 bg-[#1E3E85] text-white
+      px-17 py-10 bg-[#1E3E85] text-white
     "
     >
-      <div>Logo</div>
+      <img src={remote_recruit} className="h-15" />
 
       <div className="flex flex-row gap-10 ">
-        <span>Sign In</span>
-        <span>Sign Out</span>
+        <NavButton href={"/signin"} name={"Sign In"} isPrimary={false} />
+        <NavButton href={"/signup"} name={"Sign Up"} />
       </div>
     </div>
   );

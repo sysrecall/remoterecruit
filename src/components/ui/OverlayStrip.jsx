@@ -1,10 +1,13 @@
 import GradientCircle from "./GradientCircle";
 
 export default function OverlayStrip({
+  colors = ["#FFED43", "#F29939"],
   className = "",
   imageSrc,
   title,
   subTitle,
+  gradientCircleClassName = "w-16 h-16",
+  roundImage = true,
 }) {
   return (
     <div
@@ -24,9 +27,10 @@ export default function OverlayStrip({
       `}
     >
       <GradientCircle
-        colors={["#FFED43", "#F29939"]}
+        roundImage={roundImage}
+        colors={colors}
         imageSrc={imageSrc}
-        className="w-16 h-16"
+        className={gradientCircleClassName}
       />
 
       <div className="flex flex-col leading-tight">
