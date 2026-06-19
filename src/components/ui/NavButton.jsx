@@ -1,6 +1,7 @@
 export default function NavButton({ name, href, isPrimary = true }) {
   return (
     <a
+      aria-label={`Navigate to ${href}`}
       href={href}
       className={`
         rounded-[20px]

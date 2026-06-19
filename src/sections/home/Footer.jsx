@@ -10,7 +10,7 @@ import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const socials = [
   { href: "https://facebook.com/remoterecruit", src: fb, alt: "Facebook" },
-  { href: "https://x.com/remoterecruit", src: x, alt: "X (Twitter)" },
+  { href: "https://x.com/remoterecruit", src: x, alt: "X (Fromerly Twitter)" },
   { href: "https://instagram.com/remoterecruit", src: insta, alt: "Instagram" },
   { href: "https://twitter.com/remoterecruit", src: twitter, alt: "Twitter" },
   {
@@ -48,7 +48,13 @@ export default function Footer() {
 
         <div className="flex flex-row flex-wrap justify-center gap-3 sm:gap-4">
           {socials.map(({ href, src, alt }) => (
-            <a key={alt} href={href} target="_blank" rel="noreferrer">
+            <a
+              key={alt}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={alt}
+            >
               <img
                 width={36}
                 className="sm:w-10 hover:opacity-80 transition-opacity duration-200"
