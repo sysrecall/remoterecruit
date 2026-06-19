@@ -16,7 +16,7 @@ export function useScrollAnimation({
   floating = false,
   selector = ".animate-item",
   staggerDelay = 150,
-  entranceDuration = 800,
+  entranceDuration = 2000,
 } = {}) {
   const containerRef = useRef(null);
 
@@ -59,7 +59,7 @@ export function useScrollAnimation({
           observer.unobserve(container);
         }
       },
-      { threshold }
+      { threshold },
     );
 
     observer.observe(container);
