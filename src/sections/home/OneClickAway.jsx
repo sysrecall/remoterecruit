@@ -1,6 +1,7 @@
 import tick from "../../assets/tick.png";
 import cross from "../../assets/cross.png";
 import GradientCircle from "../../components/ui/GradientCircle";
+import img_person from "../../assets/img_person.png";
 
 export default function OneClickAway() {
   return (
@@ -97,7 +98,29 @@ export default function OneClickAway() {
     "
           >
             <div className="flex flex-row">
-              <div className="bg-[#ECF2FF] w-45 h-50 rounded-2xl flex flex-col justify-center items-center">
+              <div
+                className="relative bg-[#ECF2FF] w-45 h-50 
+              rounded-2xl flex flex-col justify-center items-center"
+              >
+                <div
+                  className={`
+                    absolute
+                    -top-6
+                    w-40 h-13
+                    rounded-full
+                    bg-[#C2EEFF]
+                    flex items-center
+                    px-3 gap-2
+                    shadow-[0px_4px_4px_0px_rgba(67,145,193,0.21)]
+                  `}
+                >
+                  <div className="flex justify-center items-center rounded-full w-11 h-11 bg-white">
+                    <img className="p-3" src={img_person} />
+                  </div>
+
+                  <div className="flex flex-col font-bold">Premium</div>
+                </div>
+
                 <p
                   className="text-4xl font-bold bg-clip-text text-transparent"
                   style={{
@@ -143,7 +166,6 @@ export default function OneClickAway() {
                 </div>
               </div>
             </div>
-
             <a
               href="/purchase/paid"
               style={{
@@ -152,6 +174,7 @@ export default function OneClickAway() {
                 color: "white",
               }}
               className="
+    w-full
     rounded-[30px]
     font-bold
     px-8 py-10
@@ -159,9 +182,9 @@ export default function OneClickAway() {
     text-center
     flex items-center justify-center
     transition-all duration-300
-    hover:opacity-90
-    hover:shadow-[0_4px_20px_rgba(30,62,133,0.35)]
-    hover:-translate-y-0.5
+    shadow-[0px_10px_30px_0px_rgba(49,89,211,0.25)]
+    hover:shadow-[0px_12px_35px_0px_rgba(49,89,211,0.35)]
+    hover:brightness-110
   "
             >
               Get Started
