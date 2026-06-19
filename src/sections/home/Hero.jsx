@@ -7,11 +7,11 @@ export default function Hero() {
     <div className="min-h-dvh">
       <TopBar />
       <div className="bg-linear-to-b from-[#1E3E85] to-[#336DA6] text-white min-h-[calc(100dvh-80px)] w-full pt-24 sm:pt-36 lg:pt-44 pb-16 flex flex-col items-center px-6">
-        <div className="w-full sm:w-[75%] lg:w-[54%] flex flex-col gap-6 sm:gap-8 justify-center items-center text-center">
+        <div className="sm:w-[75%] lg:w-[58%] flex flex-col gap-6 sm:gap-8 justify-center items-center text-center">
           <p className="text-4xl sm:text-5xl lg:text-6xl font-bold">
             RemoteRecruit's Difference
           </p>
-          <p className="font-medium text-lg sm:text-xl lg:text-2xl leading-relaxed">
+          <p className="font-medium text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-300">
             RemoteRecruit is connecting the world with an easy-to-use platform
             that lets full-time, part-time, and freelance workers showcase their
             talents to businesses that need them. With no paywalls, no fees, and
