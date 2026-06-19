@@ -83,21 +83,21 @@ export default function OneClickAway() {
                 backgroundImage:
                   "linear-gradient(129.98deg, #52B4DA -106.35%, #1E3E85 95.25%)",
               }}
-              className="rounded-[30px] p-0.75 transition-all duration-300 hover:p-0.5 hover:shadow-[0_4px_20px_rgba(30,62,133,0.35)]"
+              className="rounded-[30px] p-0.75 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(30,62,133,0.35)]"
             >
               <a
                 href="/purchase/free"
                 className="
-      bg-white
-      hover:bg-[#ECF2FF]
-      rounded-[26px]
-      font-bold
-      px-8 py-10
-      h-11
-      text-center
-      flex items-center justify-center
-      transition-colors duration-300
-    "
+              bg-white
+              hover:bg-[#ECF2FF]
+                rounded-[26px]
+                font-bold
+                px-8 py-10
+                h-11
+                text-center
+                flex items-center justify-center
+                transition-colors duration-300
+              "
               >
                 Get Started
               </a>
