@@ -47,9 +47,7 @@ export default function GlobalReach() {
           observer.unobserve(currentContainer);
         }
       },
-      {
-        threshold: 0.15,
-      },
+      { threshold: 0.15 },
     );
 
     observer.observe(currentContainer);
@@ -61,37 +59,55 @@ export default function GlobalReach() {
   }, []);
 
   return (
-    <div ref={containerRef} className="p-18 flex justify-center items-center">
-      <div className="w-[82%] flex flex-row justify-between">
-        <div className="flex flex-col py-6 gap-8 w-[50%] text-left">
+    <div
+      ref={containerRef}
+      className="
+        px-6 py-16
+        sm:px-10 sm:py-24
+        lg:px-18
+        flex justify-center items-center
+      "
+    >
+      <div
+        className="
+          w-full max-w-[82%]
+          flex flex-col
+          lg:flex-row
+          justify-between
+          gap-12 lg:gap-0
+        "
+      >
+        <div className="flex flex-col py-4 sm:py-6 gap-6 sm:gap-8 w-full lg:w-[50%] text-left">
           <SectionTag name={"Global Reach"} />
 
-          <div className="text-5xl font-medium">
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-medium">
             The First Fully Global Job Board, Anywhere, Ever
           </div>
 
-          <div className="text-2xl leading-11">
+          <div className="text-lg sm:text-xl lg:text-2xl leading-8 sm:leading-10 lg:leading-11">
             RemoteRecruit connects candidates with opportunities around the
-            world. With today’s remote-first workforce, you need to be able to
+            world. With today's remote-first workforce, you need to be able to
             find the best jobs and the best people for them, wherever they may
             be.
           </div>
         </div>
 
-        {/* Card Section */}
-        <div className="w-[45%] flex justify-end relative">
+        <div className="w-full lg:w-[45%] flex justify-center lg:justify-end relative">
           <GradientCircle
-            className="animate-item opacity-0 w-6 h-6 mr-6"
+            className="animate-item opacity-0 w-6 h-6 mr-4 hidden lg:flex"
             colors={["#52B4DA", "#1E3E85"]}
           />
 
-          <div className="relative">
-            <Card />
+          <div className="relative w-fit">
+            <Card className="w-80 sm:w-96 lg:w-100 h-100 sm:h-110 lg:h-120" />
 
             <img
               className="
                 rounded-[14px]
-                absolute w-86 h-50 z-10
+                absolute
+                w-68 sm:w-78 lg:w-86
+                h-40 sm:h-46 lg:h-50
+                z-10
                 top-7
                 left-7
                 object-cover object-top
@@ -104,10 +120,11 @@ export default function GlobalReach() {
               className="
                 animate-item opacity-0
                 z-30
-                -right-10
-                absolute              
-                w-26 h-26
-                p-6
+                -right-6 sm:-right-8 lg:-right-10
+                absolute
+                w-18 sm:w-22 lg:w-26
+                h-18 sm:h-22 lg:h-26
+                p-4 sm:p-5 lg:p-6
                 top-2/6
               "
               roundImage={false}
@@ -115,14 +132,14 @@ export default function GlobalReach() {
             />
 
             <OverlayStrip
-              className="animate-item opacity-0 top-1/2 -left-15"
+              className="animate-item opacity-0 top-1/2 -left-10 sm:-left-12 lg:-left-15 w-72 sm:w-88 lg:w-100"
               imageSrc={gru}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
             />
 
             <OverlayStrip
-              className="animate-item opacity-0 bottom-10 left-4"
+              className="animate-item opacity-0 bottom-10 left-4 w-72 sm:w-88 lg:w-100"
               imageSrc={gru}
               title={"Python Developer"}
               subTitle={"Felonious Gru"}
