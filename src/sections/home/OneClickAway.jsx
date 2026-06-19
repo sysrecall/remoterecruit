@@ -66,21 +66,23 @@ export default function OneClickAway() {
             <div
               style={{
                 backgroundImage:
-                  "linear-gradient(131.63deg, #336DA6 6.87%, #1E3E85 106.04%)",
+                  "linear-gradient(129.98deg, #52B4DA -106.35%, #1E3E85 95.25%)",
               }}
-              className="rounded-[30px] p-1 group hover:bg-white"
+              className="rounded-[30px] p-0.75 transition-all duration-300 hover:p-0.5 hover:shadow-[0_4px_20px_rgba(30,62,133,0.35)]"
             >
               <a
-                href="/free"
+                href="/purchase/free"
                 className="
-            bg-white
-            rounded-[26px]
-            font-bold
-            px-8 py-10
-            h-11
-            text-center
-            flex items-center justify-center
-          "
+      bg-white
+      hover:bg-[#ECF2FF]
+      rounded-[26px]
+      font-bold
+      px-8 py-10
+      h-11
+      text-center
+      flex items-center justify-center
+      transition-colors duration-300
+    "
               >
                 Get Started
               </a>
@@ -143,15 +145,24 @@ export default function OneClickAway() {
             </div>
 
             <a
-              href="/free"
+              href="/purchase/paid"
+              style={{
+                backgroundImage:
+                  "linear-gradient(129.98deg, #52B4DA -106.35%, #1E3E85 95.25%)",
+                color: "white",
+              }}
               className="
-            rounded-[30px]
-            font-bold
-            px-8 py-10
-            h-11
-            text-center
-            flex items-center justify-center
-          "
+    rounded-[30px]
+    font-bold
+    px-8 py-10
+    h-11
+    text-center
+    flex items-center justify-center
+    transition-all duration-300
+    hover:opacity-90
+    hover:shadow-[0_4px_20px_rgba(30,62,133,0.35)]
+    hover:-translate-y-0.5
+  "
             >
               Get Started
             </a>
